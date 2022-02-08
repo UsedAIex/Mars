@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% if list_type not in ("ol", "ul") %}
+    <div class="alert alert-danger" role="alert">
+        Неверный формат списка
+    </div>
+    {% else %}
+    <div>
+        {% if list_type == "ol" %}
+        <ol>
+        {% else %}
+        <ul>
+        {% endif %}
+            {% for prof in profs %}
+            <li>{{prof}}</li>
+            {% endfor %}
+        {% if list_type == "ol" %}
+        </ol>
+        {% else %}
+        </ul>
+        {% endif %}
+    </div>
+    {% endif %}
+{% endblock %}
