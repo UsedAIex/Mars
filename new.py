@@ -13,3 +13,6 @@ def name_of_operation(title):
 # def profs(list_type):
 #
 #    return render_template('prof_list.html', title=title)
+
+if __name__ == '__main__':
+    app.run(port=8080, host='127.0.0.1')
